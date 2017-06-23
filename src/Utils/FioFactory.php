@@ -38,7 +38,7 @@ class FioFactory
 	 */
 	public function createFioRead($name = NULL)
 	{
-		return new Fio\FioRead($this->getQueue(), $this->getAccount($name), $this->createReader());
+		return new Fio\FioRead($this->getQueue(), $this->getAccount($name), $this->createReaderFactory());
 	}
 
 	/**
@@ -103,9 +103,9 @@ class FioFactory
 		return new Fio\Response\Read\JsonTransactionFactory($this->getTransactionClass());
 	}
 
-	protected function createReader()
+	protected function createReaderFactory()
 	{
-		return new Fio\Request\Read\Files\Json($this->createTransactionListFactory());
+		return new Fio\Request\Read\ReaderFactory($this->createTransactionListFactory());
 	}
 
 	/**

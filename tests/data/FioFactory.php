@@ -33,9 +33,9 @@ class FioFactory extends \h4kuna\Fio\Utils\FioFactory
 		return $this->createXmlFile();
 	}
 
-	public function getReader()
+	public function getReaderFactory()
 	{
-		return $this->createReader();
+		return $this->createReaderFactory();
 	}
 
 }

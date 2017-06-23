@@ -80,7 +80,6 @@ abstract class TransactionAbstract implements \Iterator
 	protected function checkValue($value, $type)
 	{
 		switch ($type) {
-
 			case 'datetime':
 				return Utils\Strings::createFromFormat($value, $this->dateFormat);
 			case 'float':

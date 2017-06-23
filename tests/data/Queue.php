@@ -14,12 +14,11 @@ class Queue implements Fio\Request\IQueue
 	public function download($token, $url)
 	{
 		$file = '';
-		switch (basename($url, 'json')) {
-			case 'transactions.':
-				preg_match('~((?:/[^/]+){3})$~U', $url, $find);
-				$file = str_replace(['/', '-' . $token], ['-', ''], ltrim($find[1], '/'));
-				break;
+		if (preg_match('~transactions\.\w+$~', $url, $find)) {
+			preg_match('~((?:/[^/]+){3})$~U', $url, $find);
+			$file = str_replace(['/', '-' . $token], ['-', ''], ltrim($find[1], '/'));
 		}
+
 		if ($file) {
 			return Testinium\File::load($file);
 		}

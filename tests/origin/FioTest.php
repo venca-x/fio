@@ -10,7 +10,7 @@ if (!is_file($ini)) {
 $fioFactory = new \h4kuna\Fio\Utils\FioFactory(parse_ini_file($ini, TRUE));
 $fioRead = $fioFactory->createFioRead();
 
-foreach ($fioRead->movements('-1 month') as $transaction) {
+foreach ($fioRead->movementCard('-1 year') as $transaction) {
 	/* @var $transaction \h4kuna\Fio\Response\Read\Transaction */
 	var_dump($transaction->moveId);
 }

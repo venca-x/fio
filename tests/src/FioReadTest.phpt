@@ -32,6 +32,13 @@ class FioReadTest extends Tester\TestCase
 		$this->token = $this->fioRead->getAccount()->getToken();
 	}
 
+	public function testMovementCard()
+	{
+		$dt = new \DateTime('-1 week');
+		$this->fioRead->movementCard('2012-07-01', '2012-07-31');
+		Assert::equal(Fio::REST_URL . 'set-last-date/' . $this->token . '/' . $dt->format('Y-m-d') . '/', $this->fioRead->getRequestUrl());
+	}
+
 	public function testMovements()
 	{
 		$data = $this->fioRead->movements(1420070400, '2015-04-16');

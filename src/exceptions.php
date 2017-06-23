@@ -15,3 +15,5 @@ class QueueLimitException extends FioException {}
 class FileUplodException extends FioException {}
 
 class InvalidArgumentException extends FioException {}
+
+class FioCurrentAccountException extends FioException {}

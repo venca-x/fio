@@ -21,7 +21,7 @@ class JsonStatementFactoryTest extends \Tester\TestCase
 
 	public function testCustonTransactionClass()
 	{
-		$json = $this->fioFactory->getReader();
+		$json = $this->fioFactory->getReaderFactory()->getJsonMovement();
 		$list = $json->create(Testinium\File::load('2015-01-01-2015-04-16-transactions.json'));
 		Assert::same(Testinium\File::load('custom.srlz'), serialize($list));
 	}

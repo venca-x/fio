@@ -119,8 +119,8 @@ class Queue implements IQueue
 				self::sleep($tempFile);
 				$next = true;
 			} catch (GuzzleHttp\Exception\ServerException $e) {
-				if($e->hasResponse()) {
-					self::detectDownloadResponse( $e->getResponse() );
+				if ($e->hasResponse()) {
+					self::detectDownloadResponse($e->getResponse());
 				}
 				throw new Fio\ServiceUnavailableException('Service is currently unavailable');
 			} catch (GuzzleHttp\Exception\ConnectException $e) {

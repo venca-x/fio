@@ -2,7 +2,7 @@
 
 namespace h4kuna\Fio\Account;
 
-use h4kuna\Fio\AccountException;
+use h4kuna\Fio\InvalidArgumentException;
 
 /**
  * @author Milan Matějček
@@ -21,16 +21,15 @@ class Bank
 
 	/**
 	 * @param string $account [prefix-]account[/code] no whitespace
-	 * @throws AccountException
 	 */
 	public function __construct($account)
 	{
 		if (!preg_match('~^(?P<prefix>\d+-)?(?P<account>\d+)(?P<code>/\d+)?$~', $account, $find)) {
-			throw new AccountException('Account must have format [prefix-]account[/code].');
+			throw new InvalidArgumentException('Account must have format [prefix-]account[/code].');
 		}
 
 		if (strlen($find['account']) > 16) {
-			throw new AccountException('Account max length is 16 chars.');
+			throw new InvalidArgumentException('Account max length is 16 chars.');
 		}
 
 		$this->account = $find['account'];
@@ -38,7 +37,7 @@ class Bank
 		if (!empty($find['code'])) {
 			$this->bankCode = $find['code'];
 			if (strlen($this->getBankCode()) !== 4) {
-				throw new AccountException('Code must have 4 chars length.');
+				throw new InvalidArgumentException('Code must have 4 chars length.');
 			}
 		}
 

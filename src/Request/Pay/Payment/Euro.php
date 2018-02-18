@@ -52,7 +52,6 @@ class Euro extends Property
 	/**
 	 * @param string $accountTo ISO 13616
 	 * @return Euro
-	 * @throws Fio\InvalidArgumentException
 	 */
 	public function setAccountTo($accountTo)
 	{
@@ -66,7 +65,6 @@ class Euro extends Property
 	/**
 	 * @param string $bic
 	 * @return self
-	 * @throws Fio\InvalidArgumentException
 	 */
 	public function setBic($bic)
 	{
@@ -100,7 +98,6 @@ class Euro extends Property
 	/**
 	 * @param string $benefCountry
 	 * @return self
-	 * @throws Fio\InvalidArgumentException
 	 */
 	public function setCountry($benefCountry)
 	{
@@ -155,7 +152,6 @@ class Euro extends Property
 	/**
 	 * @param int $type
 	 * @return self
-	 * @throws Fio\InvalidArgumentException
 	 */
 	public function setPaymentType($type)
 	{

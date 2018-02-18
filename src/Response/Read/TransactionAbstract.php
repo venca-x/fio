@@ -23,16 +23,15 @@ abstract class TransactionAbstract implements \Iterator
 	}
 
 	/**
-	 * @param $name
+	 * @param string $name
 	 * @return mixed
-	 * @throws Fio\TransactionPropertyException
 	 */
 	public function __get($name)
 	{
 		if (array_key_exists($name, $this->properties)) {
 			return $this->properties[$name];
 		}
-		throw new Fio\TransactionPropertyException('Property does not exists. ' . $name);
+		throw new Fio\RuntimeException('Property does not exists. ' . $name);
 	}
 
 	public function clearTemporaryValues()

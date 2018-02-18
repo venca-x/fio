@@ -35,7 +35,6 @@ class FioFactory
 	/**
 	 * @param string $name Configured account name from AccountCollection
 	 * @return Fio\FioRead
-	 * @throws Fio\AccountException
 	 */
 	public function createFioRead($name = null)
 	{
@@ -45,7 +44,6 @@ class FioFactory
 	/**
 	 * @param string $name Configured account name from AccountCollection
 	 * @return Fio\FioPay
-	 * @throws Fio\AccountException
 	 */
 	public function createFioPay($name = null)
 	{
@@ -66,7 +64,6 @@ class FioFactory
 	/**
 	 * @param array $accounts
 	 * @return Fio\Account\AccountCollection
-	 * @throws Fio\AccountException
 	 */
 	protected function createAccountCollection(array $accounts)
 	{
@@ -81,7 +78,6 @@ class FioFactory
 	/**
 	 * @param string $name Configured account name from AccountCollection
 	 * @return Fio\Account\FioAccount
-	 * @throws Fio\AccountException
 	 */
 	final protected function getAccount($name)
 	{

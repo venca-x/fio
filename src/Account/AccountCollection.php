@@ -2,7 +2,7 @@
 
 namespace h4kuna\Fio\Account;
 
-use h4kuna\Fio\AccountException;
+use h4kuna\Fio\InvalidArgumentException;
 
 /**
  * @author Tomáš Jacík
@@ -17,14 +17,13 @@ class AccountCollection implements \Countable, \IteratorAggregate
 	/**
 	 * @param string
 	 * @return FioAccount
-	 * @throws AccountException
 	 */
 	public function get($alias)
 	{
 		if (isset($this->accounts[$alias])) {
 			return $this->accounts[$alias];
 		}
-		throw new AccountException('This account alias does not exists: ' . $alias);
+		throw new InvalidArgumentException('This account alias does not exists: ' . $alias);
 	}
 
 	/** @return FioAccount|FALSE */
@@ -37,12 +36,11 @@ class AccountCollection implements \Countable, \IteratorAggregate
 	 * @param string $alias
 	 * @param FioAccount $account
 	 * @return self
-	 * @throws \h4kuna\Fio\AccountException
 	 */
 	public function addAccount($alias, FioAccount $account)
 	{
 		if (isset($this->accounts[$alias])) {
-			throw new AccountException('This alias already exists: ' . $alias);
+			throw new InvalidArgumentException('This alias already exists: ' . $alias);
 		}
 
 		$this->accounts[$alias] = $account;

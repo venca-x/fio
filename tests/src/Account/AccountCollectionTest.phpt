@@ -26,7 +26,7 @@ class AccountCollectionTest extends \Tester\TestCase
 	}
 
 	/**
-	 * @throws \h4kuna\Fio\AccountException
+	 * @throws \h4kuna\Fio\InvalidArgumentException
 	 */
 	public function testInvalidAlias()
 	{
@@ -69,7 +69,7 @@ class AccountCollectionTest extends \Tester\TestCase
 	}
 
 	/**
-	 * @throws \h4kuna\Fio\AccountException
+	 * @throws \h4kuna\Fio\InvalidArgumentException
 	 */
 	public function testDuplicity()
 	{

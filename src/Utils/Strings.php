@@ -27,7 +27,6 @@ final class Strings
 	 * @param string $account
 	 * @param string|NULL $bankCode
 	 * @return Account\Bank
-	 * @throws \h4kuna\Fio\AccountException
 	 */
 	public static function createAccount($account, $bankCode = null)
 	{

@@ -122,9 +122,9 @@ class Queue implements IQueue
 				if ($e->hasResponse()) {
 					self::detectDownloadResponse($e->getResponse());
 				}
-				throw new Fio\ServiceUnavailableException('Service is currently unavailable');
+				throw new Fio\ServiceUnavailableException('Service is currently unavailable', null, $e);
 			} catch (GuzzleHttp\Exception\ConnectException $e) {
-				throw new Fio\ServiceUnavailableException('Service is currently unavailable');
+				throw new Fio\ServiceUnavailableException('Service is currently unavailable', null, $e);
 			}
 		} while ($next);
 		fclose($file);
@@ -185,7 +185,7 @@ class Queue implements IQueue
 	 * @param GuzzleHttp\Psr7\Response $response
 	 * @return Pay\XMLResponse
 	 */
-	private static function createXmlResponse($response)
+	private static function createXmlResponse(GuzzleHttp\Psr7\Response $response)
 	{
 		return new Pay\XMLResponse($response->getBody()->getContents());
 	}

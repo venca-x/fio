@@ -46,7 +46,7 @@ class BankTest extends \Tester\TestCase
 
 	/**
 	 * @dataProvider bad-accounts.ini
-	 * @throws \h4kuna\Fio\AccountException
+	 * @throws \h4kuna\Fio\InvalidArgumentException
 	 */
 	public function testBadAccount($account)
 	{

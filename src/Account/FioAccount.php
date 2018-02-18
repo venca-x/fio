@@ -15,10 +15,8 @@ class FioAccount
 	private $token;
 
 	/**
-	 * FioAccount constructor.
-	 * @param $account
-	 * @param $token
-	 * @throws \h4kuna\Fio\AccountException
+	 * @param string $account
+	 * @param string $token
 	 */
 	public function __construct($account, $token)
 	{

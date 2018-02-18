@@ -39,12 +39,9 @@ class JsonTransactionFactory implements ITransactionListFactory
 	}
 
 	/**
-	 * @param $data
-	 * @param $dateFormat
+	 * @param \stdClass $data
+	 * @param string $dateFormat
 	 * @return TransactionAbstract|null|string
-	 * @throws Fio\InvalidArgumentException
-	 * @throws Fio\TransactionExtendException
-	 * @throws Fio\TransactionPropertyException
 	 */
 	public function createTransaction($data, $dateFormat)
 	{
@@ -63,10 +60,8 @@ class JsonTransactionFactory implements ITransactionListFactory
 	}
 
 	/**
-	 * @param $dateFormat
+	 * @param string $dateFormat
 	 * @return TransactionAbstract|null|string
-	 * @throws Fio\InvalidArgumentException
-	 * @throws Fio\TransactionExtendException
 	 */
 	protected function createTransactionObject($dateFormat)
 	{
@@ -75,11 +70,11 @@ class JsonTransactionFactory implements ITransactionListFactory
 				$class = $this->transactionClass;
 				$this->transactionClass = new $class($dateFormat);
 			} else {
-				throw new Fio\InvalidArgumentException('Add you class as string.');
+				throw new Fio\RuntimeException('Add you class as string.');
 			}
 
 			if (!$this->transactionClass instanceof TransactionAbstract) {
-				throw new Fio\TransactionExtendException('Transaction class must extends TransationAbstract.');
+				throw new Fio\RuntimeException('Transaction class must extends TransationAbstract.');
 			}
 			$this->transactionClassCheck = true;
 		}
@@ -88,9 +83,8 @@ class JsonTransactionFactory implements ITransactionListFactory
 	}
 
 	/**
-	 * @param $class
+	 * @param string $class
 	 * @return array|string[]
-	 * @throws Fio\TransactionPropertyException
 	 */
 	private static function metaProperty($class)
 	{
@@ -99,7 +93,7 @@ class JsonTransactionFactory implements ITransactionListFactory
 		}
 		$reflection = new \ReflectionClass($class);
 		if (!preg_match_all('/@property-read (?P<type>[\w|]+) \$(?P<name>\w+).*\[(?P<id>\d+)\]/', $reflection->getDocComment(), $find)) {
-			throw new Fio\TransactionPropertyException('Property not found you have bad syntax.');
+			throw new Fio\RuntimeException('Property not found you have bad syntax.');
 		}
 
 		self::$property = [];

@@ -30,8 +30,6 @@ class FioPay extends Fio
 
 	/**
 	 * @return Pay\Payment\Euro
-	 * @throws InvalidArgumentException
-	 * @throws InvalidArgumentException
 	 */
 	public function createEuro($amount, $accountTo, $name)
 	{
@@ -43,7 +41,6 @@ class FioPay extends Fio
 
 	/**
 	 * @return Pay\Payment\National
-	 * @throws InvalidArgumentException
 	 */
 	public function createNational($amount, $accountTo, $bankCode = null)
 	{
@@ -54,7 +51,6 @@ class FioPay extends Fio
 
 	/**
 	 * @return Pay\Payment\International
-	 * @throws InvalidArgumentException
 	 */
 	public function createInternational($amount, $accountTo, $bic, $name, $street, $city, $country, $info)
 	{
@@ -88,7 +84,6 @@ class FioPay extends Fio
 	/**
 	 * @param string|Pay\Payment\Property $filename
 	 * @return Response\Pay\IResponse
-	 * @throws InvalidArgumentException
 	 */
 	public function send($filename = null)
 	{
@@ -119,7 +114,6 @@ class FioPay extends Fio
 	 * Response language.
 	 * @param string $lang
 	 * @return self
-	 * @throws InvalidArgumentException
 	 */
 	public function setLanguage($lang)
 	{
@@ -140,7 +134,6 @@ class FioPay extends Fio
 	 * Set upload file extension.
 	 * @param string $extension
 	 * @return self
-	 * @throws InvalidArgumentException
 	 */
 	private function setUploadExtenstion($extension)
 	{

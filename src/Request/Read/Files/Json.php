@@ -4,7 +4,8 @@ namespace h4kuna\Fio\Request\Read\Files;
 
 use h4kuna\Fio\Request,
 	h4kuna\Fio\Response\Read,
-	Nette;
+	Nette,
+	h4kuna\Fio\ServiceUnavailableException;
 
 /**
  * @author Milan Matějček
@@ -29,7 +30,7 @@ class Json implements Request\Read\IReader
 	/**
 	 * @param string $data
 	 * @return Read\TransactionList
-	 * @throws Nette\Utils\JsonException
+	 * @throws ServiceUnavailableException
 	 */
 	public function create($data)
 	{
@@ -44,7 +45,12 @@ class Json implements Request\Read\IReader
 		}
 
 		$dateFormat = 'Y-m-dO';
-		$json = Nette\Utils\Json::decode($data);
+		try {
+			$json = Nette\Utils\Json::decode($data);
+		} catch (Nette\Utils\JsonException $e) {
+			throw new ServiceUnavailableException($e->getMessage(), null, $e);
+		}
+
 		if (isset($json->accountStatement->info)) {
 			$info = $this->transactionListFactory->createInfo($json->accountStatement->info, $dateFormat);
 		} else {

@@ -2,13 +2,13 @@
 
 namespace h4kuna\Fio\Request\Pay\Payment;
 
-use h4kuna\Fio,
-	Tester\Assert,
-	Tester\TestCase,
-	h4kuna\Fio\Test,
-	Salamium\Testinium;
+use h4kuna\Fio;
+use Tester\Assert;
+use Tester\TestCase;
+use h4kuna\Fio\Test;
+use Salamium\Testinium;
 
-$container = require_once __DIR__ . '/../../../../bootstrap.php';
+$container = require __DIR__ . '/../../../../bootstrap.php';
 
 /**
  * @author Milan Matějček

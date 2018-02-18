@@ -2,8 +2,8 @@
 
 namespace h4kuna\Fio\Response\Read;
 
-use h4kuna\Fio,
-	h4kuna\Fio\Utils;
+use h4kuna\Fio;
+use h4kuna\Fio\Utils;
 
 /**
  * @author Milan Matějček

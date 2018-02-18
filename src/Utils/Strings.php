@@ -2,8 +2,8 @@
 
 namespace h4kuna\Fio\Utils;
 
-use h4kuna\Fio\Account,
-	Nette\Utils\DateTime;
+use h4kuna\Fio\Account;
+use Nette\Utils\DateTime;
 
 /**
  * @author Milan Matějček

@@ -2,11 +2,11 @@
 
 namespace h4kuna\Fio;
 
-use Tester,
-	Tester\Assert,
-	Salamium\Testinium;
+use Tester;
+use Tester\Assert;
+use Salamium\Testinium;
 
-$container = require_once __DIR__ . '/../../../bootstrap.php';
+$container = require __DIR__ . '/../../../bootstrap.php';
 
 /**
  * @author Martin Pecha

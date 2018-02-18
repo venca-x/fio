@@ -2,10 +2,10 @@
 
 namespace h4kuna\Fio\Request\Read\Files;
 
-use h4kuna\Fio\Request,
-	h4kuna\Fio\Response\Read,
-	Nette,
-	h4kuna\Fio\ServiceUnavailableException;
+use h4kuna\Fio\Request;
+use h4kuna\Fio\Response\Read;
+use Nette;
+use h4kuna\Fio\ServiceUnavailableException;
 
 /**
  * @author Milan Matějček

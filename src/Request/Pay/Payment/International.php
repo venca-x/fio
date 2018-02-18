@@ -2,8 +2,8 @@
 
 namespace h4kuna\Fio\Request\Pay\Payment;
 
-use h4kuna\Fio,
-	h4kuna\Fio\Utils;
+use h4kuna\Fio;
+use h4kuna\Fio\Utils;
 
 /**
  * @author Milan Matějček
@@ -11,10 +11,9 @@ use h4kuna\Fio,
 class International extends Euro
 {
 
-	const
-		CHARGES_OUR = 470501,
-		CHARGES_BEN = 470502,
-		CHARGES_SHA = 470503;
+	const CHARGES_OUR = 470501;
+	const CHARGES_BEN = 470502;
+	const CHARGES_SHA = 470503;
 
 	/** @var string */
 	protected $bic = true;

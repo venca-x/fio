@@ -2,11 +2,11 @@
 
 namespace h4kuna\Fio\Request\Pay\Payment;
 
-use h4kuna\Fio,
-	h4kuna\Fio\Account,
-	h4kuna\Fio\Utils,
-	Iterator,
-	Nette\Utils\DateTime;
+use h4kuna\Fio;
+use h4kuna\Fio\Account;
+use h4kuna\Fio\Utils;
+use Iterator;
+use Nette\Utils\DateTime;
 
 /**
  * @author Milan Matějček

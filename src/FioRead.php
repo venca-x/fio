@@ -6,7 +6,7 @@ use h4kuna\Fio\Response\Read\TransactionList,
 	h4kuna\Fio\Utils;
 
 /**
- * Read from informtion Fio account
+ * Read from information Fio account
  */
 class FioRead extends Fio
 {
@@ -93,6 +93,11 @@ class FioRead extends Fio
 		return $this->requestUrl;
 	}
 
+	/**
+	 * @param string $apiUrl
+	 * @return string
+	 * @throws ServiceUnavailableException
+	 */
 	private function download($apiUrl /* ... params */)
 	{
 		$args = func_get_args();

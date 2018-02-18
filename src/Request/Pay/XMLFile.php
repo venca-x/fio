@@ -2,8 +2,8 @@
 
 namespace h4kuna\Fio\Request\Pay;
 
-use h4kuna\Fio\Request\Pay\Payment,
-	XMLWriter;
+use h4kuna\Fio\Request\Pay\Payment;
+use XMLWriter;
 
 /**
  * @author Milan Matějček

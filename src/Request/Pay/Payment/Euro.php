@@ -2,9 +2,9 @@
 
 namespace h4kuna\Fio\Request\Pay\Payment;
 
-use h4kuna\Fio,
-	h4kuna\Fio\Account,
-	h4kuna\Fio\Utils;
+use h4kuna\Fio;
+use h4kuna\Fio\Account;
+use h4kuna\Fio\Utils;
 
 /**
  * @author Milan Matějček
@@ -12,9 +12,8 @@ use h4kuna\Fio,
 class Euro extends Property
 {
 
-	const
-		PAYMENT_STANDARD = 431008,
-		PAYMENT_PRIORITY = 431009;
+	const PAYMENT_STANDARD = 431008;
+	const PAYMENT_PRIORITY = 431009;
 
 	/** @var string */
 	protected $bic;

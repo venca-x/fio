@@ -2,10 +2,10 @@
 
 namespace h4kuna\Fio\Request;
 
-use GuzzleHttp,
-	h4kuna\Fio,
-	h4kuna\Fio\Response\Pay,
-	Nette\Utils;
+use GuzzleHttp;
+use h4kuna\Fio;
+use h4kuna\Fio\Response\Pay;
+use Nette\Utils;
 
 class Queue implements IQueue
 {

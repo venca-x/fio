@@ -2,8 +2,8 @@
 
 namespace h4kuna\Fio\Request\Pay\Payment;
 
-use h4kuna\Fio,
-	h4kuna\Fio\Utils;
+use h4kuna\Fio;
+use h4kuna\Fio\Utils;
 
 /**
  * @author Milan Matějček
@@ -11,11 +11,10 @@ use h4kuna\Fio,
 class National extends Property
 {
 
-	const
-		PAYMENT_STANDARD = 431001,
-		PAYMENT_FAST = 431004,
-		PAYMENT_PRIORITY = 431005,
-		PAYMENT_COLLECTION = 431022;
+	const PAYMENT_STANDARD = 431001;
+	const PAYMENT_FAST = 431004;
+	const PAYMENT_PRIORITY = 431005;
+	const PAYMENT_COLLECTION = 431022;
 
 	/** @var int */
 	protected $bankCode = true;

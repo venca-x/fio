@@ -2,10 +2,10 @@
 
 namespace h4kuna\Fio\Response\Read;
 
-use h4kuna\Fio\Test,
-	h4kuna\Fio\Request\Read\Files,
-	Salamium\Testinium,
-	Tester\Assert;
+use h4kuna\Fio\Test;
+use h4kuna\Fio\Request\Read\Files;
+use Salamium\Testinium;
+use Tester\Assert;
 
 require __DIR__ . '/../../../bootstrap.php';
 

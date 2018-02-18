@@ -2,8 +2,6 @@
 
 namespace h4kuna\Fio\Response\Read;
 
-use h4kuna\Fio\Response\Read\TransactionAbstract;
-
 /**
  * @author Milan Matějček
  */

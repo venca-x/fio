@@ -19,7 +19,7 @@ interface IQueue
 	 * @param string $url
 	 * @return string raw data
 	 */
-	public function download($token, $url);
+	function download($token, $url);
 
 	/**
 	 * @param string $url
@@ -28,5 +28,5 @@ interface IQueue
 	 * @param string $filename
 	 * @return Response\Pay\IResponse
 	 */
-	public function upload($url, $token, array $post, $filename);
+	function upload($url, $token, array $post, $filename);
 }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace h4kuna\Fio\Request\Read;
 
@@ -23,16 +23,10 @@ interface IReader
 
 	function __construct(Response\Read\ITransactionListFactory $statement);
 
-	/**
-	 * File extension.
-	 * @return string
-	 */
-	function getExtension();
+	function getExtension(): string;
 
 	/**
 	 * Prepare downloaded data before append.
-	 * @param string $data
-	 * @return Response\Read\TransactionList
 	 */
-	function create($data);
+	function create(string $data): Response\Read\TransactionList;
 }

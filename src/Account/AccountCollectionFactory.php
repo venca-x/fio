@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace h4kuna\Fio\Account;
 
@@ -14,7 +14,7 @@ class AccountCollectionFactory
 	 * @param array $accounts
 	 * @return AccountCollection
 	 */
-	public static function create(array $accounts)
+	public static function create(array $accounts): AccountCollection
 	{
 		$accountCollection = new AccountCollection;
 		foreach ($accounts as $alias => $info) {

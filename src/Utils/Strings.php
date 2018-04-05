@@ -49,6 +49,7 @@ final class Strings
 	/**
 	 * Convert string to DateTime.
 	 * @param string $value
+	 * @param string $format
 	 * @param bool $midnight
 	 * @return DateTime
 	 */

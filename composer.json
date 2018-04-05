@@ -1,28 +1,31 @@
 {
-	"name": "h4kuna/fio",
-	"type": "library",
-	"description": "Read JSON file from Fio bank and can send request.",
-	"homepage": "https://github.com/h4kuna/fio",
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Milan Matějček",
-			"email": "milan.matejcek@gmail.com",
-			"role": "Developer"
-		}
-	],
-	"require": {
-		"guzzlehttp/guzzle": "^6.0",
-		"nette/safe-stream": "^2.0",
-		"nette/utils": "^2.2"
-	},
-	"autoload": {
-		"psr-4": {
-			"h4kuna\\Fio\\": "src/"
-		},
-		"files": ["src/exceptions.php"]
-	},
-	"require-dev": {
-		"salamium/testinium": "^0.1"
-	}
+  "name": "h4kuna/fio",
+  "type": "library",
+  "description": "Read JSON file from Fio bank and can send request.",
+  "homepage": "https://github.com/h4kuna/fio",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Milan Matějček",
+      "email": "milan.matejcek@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "guzzlehttp/guzzle": "^6.0",
+    "nette/safe-stream": "^2.0",
+    "nette/utils": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "h4kuna\\Fio\\": "src/"
+    },
+    "files": [
+      "src/exceptions.php"
+    ]
+  },
+  "require-dev": {
+    "salamium/testinium": "^0.1"
+  }
 }

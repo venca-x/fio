@@ -19,7 +19,7 @@ class XMLResponse implements IResponse
 		$this->xml = new SimpleXMLElement($xml);
 	}
 
-	public function isOk()
+	public function isOk(): bool
 	{
 		return $this->getError() === 'ok' && $this->getErrorCode() === 0;
 	}

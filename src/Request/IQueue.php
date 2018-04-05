@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace h4kuna\Fio\Request;
 
@@ -15,18 +15,9 @@ interface IQueue
 	const HEADER_CONFLICT = 409;
 
 	/**
-	 * @param string $token
-	 * @param string $url
-	 * @return string raw data
+	 * Return raw data from source.
 	 */
-	function download($token, $url);
+	function download(string $token, string $url): string;
 
-	/**
-	 * @param string $url
-	 * @param string $token
-	 * @param array $post
-	 * @param string $filename
-	 * @return Response\Pay\IResponse
-	 */
-	function upload($url, $token, array $post, $filename);
+	function upload(string $url, string $token, array $post, string $filename): Response\Pay\IResponse;
 }

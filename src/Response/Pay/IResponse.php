@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace h4kuna\Fio\Response\Pay;
 
@@ -8,12 +8,10 @@ namespace h4kuna\Fio\Response\Pay;
 interface IResponse
 {
 
-	/** @return bool */
-	function isOk();
+	function isOk(): bool;
 
 	/** @return mixed */
 	function getError();
 
-	/** @return int */
-	function getErrorCode();
+	function getErrorCode(): int;
 }

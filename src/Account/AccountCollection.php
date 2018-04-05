@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace h4kuna\Fio\Account;
 
@@ -18,7 +18,7 @@ class AccountCollection implements \Countable, \IteratorAggregate
 	 * @param string
 	 * @return FioAccount
 	 */
-	public function get($alias)
+	public function get($alias): FioAccount
 	{
 		if (isset($this->accounts[$alias])) {
 			return $this->accounts[$alias];
@@ -26,18 +26,16 @@ class AccountCollection implements \Countable, \IteratorAggregate
 		throw new InvalidArgumentException('This account alias does not exists: ' . $alias);
 	}
 
-	/** @return FioAccount|FALSE */
-	public function getDefault()
+	public function getDefault(): ?FioAccount
 	{
-		return reset($this->accounts);
+		$account = reset($this->accounts);
+		if ($account === false) {
+			return null;
+		}
+		return $account;
 	}
 
-	/**
-	 * @param string $alias
-	 * @param FioAccount $account
-	 * @return self
-	 */
-	public function addAccount($alias, FioAccount $account)
+	public function addAccount(string $alias, FioAccount $account): AccountCollection
 	{
 		if (isset($this->accounts[$alias])) {
 			throw new InvalidArgumentException('This alias already exists: ' . $alias);
@@ -47,20 +45,12 @@ class AccountCollection implements \Countable, \IteratorAggregate
 		return $this;
 	}
 
-	/**
-	 * Returns items count.
-	 * @return int
-	 */
-	public function count()
+	public function count(): int
 	{
 		return count($this->accounts);
 	}
 
-	/**
-	 * Returns an iterator over all items.
-	 * @return \ArrayIterator
-	 */
-	public function getIterator()
+	public function getIterator(): \ArrayIterator
 	{
 		return new \ArrayIterator($this->accounts);
 	}

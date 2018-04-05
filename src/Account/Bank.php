@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace h4kuna\Fio\Account;
 
@@ -10,19 +10,19 @@ use h4kuna\Fio\InvalidArgumentException;
 class Bank
 {
 
-	/** @var int */
+	/** @var string */
 	private $account;
 
-	/** @var int */
+	/** @var string */
 	private $bankCode = '';
 
-	/** @var int */
+	/** @var string */
 	private $prefix = '';
 
 	/**
 	 * @param string $account [prefix-]account[/code] no whitespace
 	 */
-	public function __construct($account)
+	public function __construct(string $account)
 	{
 		if (!preg_match('~^(?P<prefix>\d+-)?(?P<account>\d+)(?P<code>/\d+)?$~', $account, $find)) {
 			throw new InvalidArgumentException('Account must have format [prefix-]account[/code].');
@@ -46,14 +46,12 @@ class Bank
 		}
 	}
 
-	/** @return string */
-	public function getAccount()
+	public function getAccount(): string
 	{
 		return $this->prefix . $this->account;
 	}
 
-	/** @return string */
-	public function getBankCode()
+	public function getBankCode(): string
 	{
 		if ($this->bankCode) {
 			return substr($this->bankCode, 1);
@@ -61,8 +59,7 @@ class Bank
 		return '';
 	}
 
-	/** @return string */
-	public function getPrefix()
+	public function getPrefix(): string
 	{
 		if ($this->prefix) {
 			return substr($this->prefix, 0, -1);
@@ -70,7 +67,7 @@ class Bank
 		return '';
 	}
 
-	public function getAccountAndCode()
+	public function getAccountAndCode(): string
 	{
 		return $this->getAccount() . $this->bankCode;
 	}

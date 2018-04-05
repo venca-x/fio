@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace h4kuna\Fio\Account;
 
@@ -14,30 +14,23 @@ class FioAccount
 	/** @var string */
 	private $token;
 
-	/**
-	 * @param string $account
-	 * @param string $token
-	 */
-	public function __construct($account, $token)
+	public function __construct(string $account, string $token)
 	{
 		$this->account = new Bank($account);
 		$this->token = $token;
 	}
 
-	/** @return string */
-	public function getAccount()
+	public function getAccount(): string
 	{
 		return $this->account->getAccount();
 	}
 
-	/** @return string */
-	public function getBankCode()
+	public function getBankCode(): string
 	{
 		return $this->account->getBankCode();
 	}
 
-	/** @return string */
-	public function getToken()
+	public function getToken(): string
 	{
 		return $this->token;
 	}
